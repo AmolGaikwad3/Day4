@@ -1,0 +1,69 @@
+Q.1 compare JSON obj1 & obj2 without order
+=> <script>
+        var obj1={name: "person1", age: 5};
+        var obj2={age: 5, name: "person1"};
+        console.log(JSON.stringify(obj1) == JSON.stringify(obj2));
+    </script>
+Q.2 flags
+=> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var request= new XMLHttpRequest();
+      request.open('GET','https://restcountries.com/v3.1/all')
+      request.send()
+      request.onload=function(){
+        var data=request.response
+      // console.log(JSON.parse(data))
+        var res=JSON.parse(data)
+        for(i=0;i<res.length;i++){
+            console.log(res[i].flag)
+        
+      }
+    }
+    </script>
+</body>
+</html>
+Q.3 names,region,population
+=> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var request= new XMLHttpRequest();
+      request.open('GET','https://restcountries.com/v3.1/all')
+      request.send()
+      request.onload=function(){
+        var data=request.response
+      // console.log(JSON.parse(data))
+        var res=JSON.parse(data)
+      //names
+  for(i=0;i<res.length;i++){
+            console.log(res[i].name)
+        
+      }
+      //region
+ for(i=0;i<res.length;i++){
+            console.log(res[i].region)
+        
+      }
+      //population
+ for(i=0;i<res.length;i++){
+            console.log(res[i].population)
+        
+      }
+    }
+    </script>
+</body>
+</html>
